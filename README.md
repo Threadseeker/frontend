@@ -54,7 +54,7 @@ To start building your own API to integrate with this frontend, you can follow t
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Apache 2.0 License - see the LICENSE file for details.
 
 
 
