@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /api/*
+Disallow: /report/*
+Disallow: /_nuxt/*
+Disallow: /confirm

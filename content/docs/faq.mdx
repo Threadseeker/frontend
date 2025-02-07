@@ -1,0 +1,88 @@
+---
+title: 常見問題
+description: Threadseeker 常見問題
+---
+
+[English Version](/docs/en/faq) | [日本語版](/docs/ja/faq)
+
+# 常見問題
+
+本篇收錄有關 Threadseeker 的相關問題，有關資安方面跟統計數據的解釋都可以在這裡找到解答！
+
+## 為何要登入 Google 帳號？😖
+
+使用 Google 帳號登入是為了避免後端程式被濫用，而不是為了做其他用途，**網站本身只用 Google 帳號做驗證用途，我不會也無法取得你的 Google 帳號密碼。**
+
+當使用者以 Google 帳號登入任何支援 Gogole 登入網站後，網站會收到：
+
+- 你的帳號名稱
+- 你的電子郵件地址
+- 你的個人資料相片
+
+以本網站來說，程式只會紀錄電子郵件來紀錄是否先前有登入過，以及當日查詢幾次（ 被免惡意濫用 ），其餘資訊不會存取，網站也不會將電子郵件做任何商業用途或再行銷。
+
+如果您會在意需要 Google 帳號登入的條件，您也可以選擇不使用 Threadseeker 的服務。
+
+延伸閱讀：[「使用 Google 帳戶登入」功能如何協助您安全地分享資料 - Google.com ](https://support.google.com/accounts/answer/12921417?hl=zh-Hant)
+
+## 為何 Google 登入網域跟 Threadseeker 不一樣？🧐
+
+要跟各位說明這不是資安的問題，是因為我沒有花錢升級 Threadseeker 的後端資料庫服務（ 我用的是 [Supabase](https://supabase.com) ），所以 Google 登入畫面會顯示 Supabase 預設的網域。
+
+但是這並不影響你的帳號安全，你可以確認登入頁面的網址是否為 `google.com`，我不會存取你的 Google 帳號密碼。看似亂碼的網址是後端資料庫的實際網址，而不是因為這是詐騙網站。
+
+相關資料：[Continue to custom.domain instead of XXXX.supabase.co when using Google as provider - GitHub](https://github.com/orgs/supabase/discussions/5041)
+
+## 分析後，我的 Threads 帳號會有風險嗎？😯
+
+**結論：Threadseeker 沒有權限存取你的 Threads 帳號密碼或是任何隱私資料。**
+
+網站只會用程式模擬出一個沒追蹤你的 Threads 使用者，把所有平台上公開的數據跟貼文統計過後，將結果呈現在最終的報表上。
+
+所以你的 Threads 帳號不會因為使用 Threadseeker 分析而有任何風險。網站報表上顯示的資料也是任何人原先都能看的。
+
+基本上程式能抓到的資料就跟 Google 能抓到的資料一樣，只是我用寫程式的方式，更有效率地把它統計起來。
+
+（ 會希望您理解的是，任何人都能寫程式自動統計您在 Threads、Instagram、Facebook 等社群的公開資料，要唯一避免他人分析您貼文的唯一方法是將帳號設定為不公開 ）
+
+## 我查詢 Threads 帳號的記錄會被留存嗎？😥
+
+對於「 哪些 Google 帳號查過哪些 Threads 帳號 」的查詢記錄，Threadseeker 會暫時保留 24 小時後清除。
+
+會暫時留查詢記錄的原因，是因為目前網站有設計單日查詢上限的機制，意指我有限制每個 Google 使用者一天只能分析一個新的 Threads 帳號，為了能檢查 Google 帳號當日請求過幾個新的 Threads 帳號分析工作，所以需要留存這樣的資料，而不是做行銷或是統計分析用途。
+
+然而，如果您查詢已經分析完成的 Threads 帳號，網站不會紀錄您的查詢行為。Threadseeker 只記錄「 查詢未曾分析過的 Threads 帳號 」的行為。
+
+一樣地，如果您會顧慮上述查詢紀錄會短暫留存的問題，也歡迎您選擇不使用本服務。
+
+作者我在 Threads 的回覆串文：[點我看原文](https://www.threads.net/@cjs.shawn/post/C5wBOjZvcVJ) 👈🏻
+
+## 我可以解除綁定 Threadseeker 的 Google 帳號嗎？😗
+
+如果您決定不再使用 Threadseeker，並中斷網站與您 Google 帳號的綁定，那麼您可以參照下方 Google 官方的教學，解除您帳號與 Threadseeker 的連結：
+
+1. 前往 Google 帳戶的[「您的第三方連結項目」](https://myaccount.google.com/connections)頁面。
+2. 選取「使用 Google 帳戶登入」。
+3. 依序選取要移除連結的第三方應用程式或服務 下一步「查看詳細資料」。
+4. 依序選取「停用『使用 Google 帳戶登入』功能」下一步「確認」。
+
+延伸閱讀：[管理 Google 帳戶與第三方之間的連結（ Google 官方教學 ）](https://support.google.com/accounts/answer/13533235?hl=zh-Hant)
+
+## 活網等級是怎麼計算的？😎
+
+活網等級是依照「 每天平均發文數 」的指標，根據你帳號的每日發文頻率在全體資料的 PR 值給予對應的等級，有點像學測五標的排序方法。
+
+- C: PR 35 以下
+- B: PR 35 ~ 40
+- B+: PR 40 ~ 50
+- A: PR 50 ~ 75
+- A+ PR 75 ~ 85
+- A++ PR 85 ~ 90
+- S: PR 90 - 95
+- SSS: PR 95 以上
+
+所以分析報表的活網等級可能會隨著時間跟資料量而變動～
+
+## 這個網站是誰開發的？🤓
+
+請參考 [關於本站](/docs/about)。但可以先跟你說是一個管院大二學生無聊寫的。

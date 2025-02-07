@@ -1,0 +1,86 @@
+---
+title: Frequently Asked Questions
+description: Threadseeker FAQ
+---
+
+# Frequently Asked Questions
+
+This section addresses common questions about Threadseeker, including security concerns and explanations of statistical data.
+
+## Why do I need to log in with a Google account? 😖
+
+Logging in with a Google account helps prevent misuse of our backend systems. It's solely for authentication purposes. **We do not and cannot access your Google account password.**
+
+When you log in to any site using Google, the site receives:
+
+- Your account name
+- Your email address
+- Your profile picture
+
+For Threadseeker, we only record your email to track if you've logged in before and how many times you've queried in a day (to prevent abuse). We do not use your email for any commercial purposes or marketing.
+
+If you're uncomfortable with the requirement to log in with a Google account, you may choose not to use Threadseeker.
+
+Further reading: [How "Sign in with Google" helps you securely share your data - Google.com](https://support.google.com/accounts/answer/12921417?hl=en)
+
+## Why is the Google login domain different from Threadseeker? 🧐
+
+This is not a security issue. It occurs because I haven't upgraded Threadseeker's backend database service (we use [Supabase](https://supabase.com)), so the Google login screen shows Supabase's default domain.
+
+This does not affect your account security. You can verify the login page URL is `google.com`. I do not access your Google account password. The seemingly random URL is the actual backend database URL, not a phishing site.
+
+Related information: [Continue to custom.domain instead of XXXX.supabase.co when using Google as provider - GitHub](https://github.com/orgs/supabase/discussions/5041)
+
+## Is there any risk to my Threads account after analysis? 😯
+
+**Conclusion: Threadseeker does not have access to your Threads account password or any private data.**
+
+The site simulates a non-following Threads user to gather publicly available data and post statistics, presenting the results in a final report.
+
+Therefore, using Threadseeker for analysis poses no risk to your Threads account. The data shown in the report is information anyone could already view.
+
+Essentially, the data the program can access is similar to what Google can access, but I use programming to compile it more efficiently.
+
+(It's important to understand that anyone can write a program to automatically compile your public data on Threads, Instagram, Facebook, etc. The only way to prevent others from analyzing your posts is to set your account to private.)
+
+## Will my Threads account query history be stored? 😥
+
+Threadseeker temporarily retains query records for "which Google accounts queried which Threads accounts" for 24 hours before deletion.
+
+The reason for temporarily storing query records is due to a daily query limit mechanism. This means each Google user can only analyze one new Threads account per day. To check how many new Threads account analyses a Google account has requested in a day, this data needs to be retained, not for marketing or statistical analysis purposes.
+
+However, if you query a Threads account that has already been analyzed, the site will not record your query behavior. Threadseeker only records actions for "querying Threads accounts that have not been analyzed before."
+
+Similarly, if you're concerned about the temporary retention of query records, you are welcome to choose not to use this service.
+
+My response on Threads: [View original post](https://www.threads.net/@cjs.shawn/post/C5wBOjZvcVJ) 👈🏻
+
+## Can I unlink my Google account from Threadseeker? 😗
+
+If you decide to stop using Threadseeker and want to disconnect your Google account, you can follow Google's official instructions to unlink your account from Threadseeker:
+
+1. Go to the [Your Third-Party Connections](https://myaccount.google.com/connections) page in your Google Account.
+2. Select "Sign in with Google."
+3. Select the third-party app or service you want to unlink, then "View details."
+4. Select "Disable 'Sign in with Google'" and then "Confirm."
+
+Further reading: [Manage third-party links with your Google Account (Google official guide)](https://support.google.com/accounts/answer/13533235?hl=en)
+
+## How is the Active Network Level calculated? 😎
+
+The Active Network Level is based on the "average number of posts per day" indicator. It assigns a corresponding level based on your account's daily posting frequency in the overall data's PR value, similar to a percentile ranking method.
+
+- C: Below PR 35
+- B: PR 35 ~ 40
+- B+: PR 40 ~ 50
+- A: PR 50 ~ 75
+- A+ PR 75 ~ 85
+- A++ PR 85 ~ 90
+- S: PR 90 - 95
+- SSS: Above PR 95
+
+Therefore, the Active Network Level in the analysis report may change over time and with data volume.
+
+## Who developed this website? 🤓
+
+Please refer to [About Us](/docs/about). But I can tell you it was developed by a bored sophomore business student.
