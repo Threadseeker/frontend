@@ -2,6 +2,8 @@
 
 This document describes the API endpoints required to integrate with the Threadseeker frontend. This is helpful when you are building your own backend service that 100% compatible with this frontend.
 
+To view the OpenAPI doc for the real backend service of Threadseeker, check out [here](doc.threadseeker.app)
+
 ## Concepts
 
 [Threadseeker](https://threadseeker.app) is implemented with task-based approach for Threads fetching work. When user clicks "Search" button, the following steps are taken:
